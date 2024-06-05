@@ -41,7 +41,7 @@ const accountSlice = createSlice({
     },
   },
 });
-
+//  These are used by the various components to dispatch actions
 export const { withdraw, requestLoan, payLoan } = accountSlice.actions;
 
 export function deposit(amount, currency) {
@@ -60,6 +60,7 @@ export function deposit(amount, currency) {
     dispatch({ type: "account/deposit", payload: converted });
   };
 }
+// This is used by the store.js file as accountSlice because it is imported as a default
 export default accountSlice.reducer;
 // export default function accountReducer(state = initialState, action) {
 //   switch (action.type) {
